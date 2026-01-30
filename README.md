@@ -1,87 +1,116 @@
-# IT23847330 Assignment 1 - Swift Translator UI Testing
-
-A comprehensive Playwright-based automated testing suite for the **Swift Translator** web application. This project contains end-to-end tests that validate the real-time English to Sinhala translation functionality.
+# ITPM Assignment 1 - Swift Translator E2E Tests
 
 ## Project Overview
 
-This assignment focuses on testing the user interface and functionality of the Swift Translator application (https://www.swifttranslator.com/), which provides real-time translation from English to Sinhala language.
+This project contains a comprehensive end-to-end (E2E) testing suite for the **Swift Translator** web application using **Playwright**. The test suite validates the real-time text translation functionality, converting English transliteration to Sinhala script.
 
-## Features
+**Project Name:** `it23847330-assignment-1`  
+**Version:** 1.0.0  
+**Framework:** Playwright Test (v1.58.0)
 
-- **Real-time Translation Testing**: Validates that English text translates to Sinhala in real-time
-- **Multiple Test Cases**: Includes 34+ test scenarios covering various phrases and sentences
-- **Cross-browser Testing**: Tests run on Chromium, Firefox, and WebKit browsers
-- **HTML Reporting**: Generates detailed test reports with screenshots and traces
-- **Parallel Execution**: Tests run in parallel for faster execution
+---
 
-## Tech Stack
+## Project Description
 
-- **Playwright**: ^1.58.0 - Modern browser automation framework
-- **Node.js**: JavaScript runtime environment
-- **TypeScript**: Type definitions for Node.js (@types/node ^25.1.0)
+The Swift Translator is a web-based translation tool that translates English phonetic text into Sinhala script in real-time. This test suite ensures the translator's accuracy and functionality across multiple test cases.
 
-## Project Structure
+### Application Under Test (AUT)
+- **URL:** https://www.swifttranslator.com/
+- **Functionality:** Real-time English to Sinhala transliteration
 
-```
-IT23847330-Assignment-1/
-├── tests/
-│   └── example.spec.js          # Main test file with all test cases
-├── playwright-report/           # Generated HTML test reports
-├── test-results/                # Detailed test result artifacts
-├── playwright.config.js         # Playwright configuration
-├── package.json                 # Project dependencies
-└── README.md                    # This file
-```
+---
 
-## Installation
+## Features Tested
+
+The test suite includes **35+ test cases** (Pos_UI_0001 to Pos_UI_0035) covering:
+
+✅ **Basic Translations** - Simple English phonetic phrases to Sinhala script  
+✅ **Complex Sentences** - Multi-word sentences and compound statements  
+✅ **Special Characters** - Numbers, dates, and mixed alphanumeric input  
+✅ **Case Sensitivity** - Handling of uppercase and lowercase variations  
+✅ **Long Text** - Extended paragraphs and warning messages  
+✅ **Real-time Updates** - Immediate translation output validation  
+✅ **Multi-line Input** - Text with newline characters  
+
+### Sample Test Cases
+
+| Test ID | Input | Expected Output |
+|---------|-------|-----------------|
+| Pos_UI_0001 | mama midhulee innee. | මම මිදුලේ ඉන්නේ. |
+| Pos_UI_0018 | 2026-01-21 mama Kandy yanavaa. | 2026-01-21 මම Kandy යනවා. |
+| Pos_UI_0033 | mama office giyaa namuth vaeda... | මම office ගියා නමුත් වැඩ කරන්න... |
+| Pos_UI_0035 | Api Haemadhama mee vageema... | අපි හැමදම මේ වගේම එකට ඉමු... |
+
+---
+
+## Installation & Setup
 
 ### Prerequisites
 
-- Node.js (v16 or higher recommended)
-- npm or yarn package manager
+- **Node.js** (v16 or higher)
+- **npm** (Node Package Manager)
 
-### Setup Steps
+### Installation Steps
 
-1. Clone or navigate to the project directory:
+1. **Clone or download the project:**
    ```bash
-   cd IT23847330-Assignment-1
+   cd d:\y3s1\ITPM-Assignment-1
    ```
 
-2. Install dependencies:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
    This will install:
-   - `@playwright/test` - The Playwright testing framework
-   - `@types/node` - TypeScript definitions for Node.js
+   - `@playwright/test` (v1.58.0) - Test framework
+   - `@types/node` (v25.1.0) - TypeScript type definitions for Node.js
+
+---
+
+## Project Structure
+
+```
+ITPM-Assignment-1/
+├── package.json                 # Project metadata and dependencies
+├── playwright.config.js         # Playwright configuration
+├── tests/
+│   └── example.spec.js          # Main test file with 35+ test cases
+├── playwright-report/           # HTML test reports
+│   ├── index.html
+│   └── data/                    # Report data files
+├── test-results/                # Detailed test results
+│   └── example-Pos-UI-XXXX*/    # Individual test result directories
+└── README.md                    # This file
+```
+
+---
 
 ## Running Tests
 
 ### Run All Tests
 ```bash
-npm test
-```
-or
-```bash
 npx playwright test
 ```
 
-### Run Tests in a Specific Browser
-```bash
-npx playwright test --project=chromium
-npx playwright test --project=firefox
-npx playwright test --project=webkit
-```
-
-### Run a Specific Test File
+### Run Tests in Specific File
 ```bash
 npx playwright test tests/example.spec.js
 ```
 
-### Run Tests in UI Mode (Interactive)
+### Run Tests with UI Mode (Interactive)
 ```bash
 npx playwright test --ui
+```
+
+### Run Tests with Headed Mode (Browser Visible)
+```bash
+npx playwright test --headed
+```
+
+### Run Single Test Case
+```bash
+npx playwright test -g "Pos_UI_0001"
 ```
 
 ### Run Tests in Debug Mode
@@ -89,29 +118,46 @@ npx playwright test --ui
 npx playwright test --debug
 ```
 
-## Test Coverage
+### Generate HTML Report
+```bash
+npx playwright show-report
+```
 
-The test suite covers the following translation scenarios:
+---
 
-- Basic sentences and phrases
-- Questions in English
-- Complex sentences with multiple words
-- Validation of correct Sinhala output
-- Real-time translation response
+## Configuration Details
 
-**Total Test Cases**: 34+ automated test scenarios
+### Playwright Configuration (`playwright.config.js`)
 
-## Test Structure
+- **Test Directory:** `./tests`
+- **Parallel Execution:** Enabled for faster test runs
+- **Retries:** 0 retries locally, 2 retries in CI/CD environments
+- **Workers:** Multiple workers locally, single worker in CI
+- **Reporter:** HTML (generates visual reports)
+- **Trace Collection:** Captured on first retry for debugging
 
-Each test follows this pattern:
+### Supported Browsers
 
-1. Navigate to https://www.swifttranslator.com/
-2. Locate the input textarea
-3. Type English text with a 100ms delay between characters
-4. Wait for and validate the Sinhala translation appears
-5. Assert the correct translated output is visible
+- **Chromium** (Desktop Chrome)
+- **Firefox** (Desktop Firefox)
+- **WebKit** (Desktop Safari)
 
-### Example Test
+Tests are configured to run against all three browsers by default.
+
+---
+
+## Test Methodology
+
+### Test Structure
+
+Each test follows a consistent pattern:
+
+1. **Navigation** - Open the Swift Translator website
+2. **Input** - Locate textarea and type English transliteration
+3. **Verification** - Assert that the Sinhala translation appears
+4. **Timeout** - 10-15 second wait for real-time translation rendering
+
+### Example Test Code
 
 ```javascript
 test('Pos_UI_0001 - Real-time output update', async ({ page }) => {
@@ -122,72 +168,174 @@ test('Pos_UI_0001 - Real-time output update', async ({ page }) => {
 });
 ```
 
-## Configuration
+### Key Testing Features
 
-The `playwright.config.js` file contains:
+- **Slow Typing Simulation:** `{ delay: 100 }` to simulate realistic user input
+- **Text-based Element Selection:** Uses `getByText()` for reliability
+- **Explicit Waits:** 10,000-15,000ms timeout for translation rendering
+- **Real Browser Testing:** Tests in actual browsers (Chrome, Firefox, Safari)
 
-- **Test Directory**: `./tests`
-- **Parallel Execution**: Enabled by default
-- **Browsers**: Chromium, Firefox, WebKit
-- **Reporter**: HTML reporter for visual test results
-- **Trace Collection**: Enabled on first retry for debugging failed tests
-- **Retries**: 2 retries on CI, 0 on local
-- **Timeout**: 10-second default wait for assertions
+---
 
-## Test Reports
+## Test Results & Reports
 
-After running tests, an HTML report is generated in the `playwright-report/` directory.
+### Generated Artifacts
 
-### View the Report
+1. **HTML Report** (`playwright-report/index.html`)
+   - Visual summary of all test executions
+   - Pass/fail status for each test
+   - Execution time and duration
+
+2. **Test Results** (`test-results/`)
+   - Individual error context for failed tests
+   - Detailed failure information
+   - Screenshots/videos (if enabled)
+
+### Viewing Reports
+
 ```bash
 npx playwright show-report
 ```
 
-This opens an interactive HTML dashboard showing:
-- Test pass/fail status
-- Execution timeline
-- Screenshots and videos
-- Detailed error messages
-- Browser-specific results
+---
 
-## Troubleshooting
+## Test Execution Statistics
 
-### Tests Timing Out
-- Increase timeout in test: `await expect(...).toBeVisible({ timeout: 15000 })`
-- Check internet connection to swifttranslator.com
-- Ensure the website is responsive
+- **Total Test Cases:** 35+
+- **Test Naming Convention:** `Pos_UI_XXXX` (Positive UI tests, numbered 0001-0035)
+- **Scope:** Real-time output updates for English to Sinhala translation
+- **Input Types:** Simple phrases, complex sentences, special characters, multi-line text
 
-### Browser Installation Issues
+---
+
+## Common Issues & Troubleshooting
+
+### Issue: Tests Timeout
+
+**Cause:** Slow network or website unavailability  
+**Solution:** Increase timeout in test configuration or check internet connection
+
+```javascript
+await expect(...).toBeVisible({ timeout: 15000 });
+```
+
+### Issue: "Cannot find element" Error
+
+**Cause:** Website structure changed  
+**Solution:** Update selectors in test file
+- Use browser DevTools Inspector
+- Test with `page.getByText()` if text-based selection fails
+
+### Issue: Tests Pass Locally but Fail in CI
+
+**Cause:** Browser differences or network issues  
+**Solution:** 
+- Run against all browsers: `npx playwright test`
+- Check CI/CD logs for specific errors
+- Increase retry count in CI configuration
+
+### Issue: Playwright Not Installed
+
+**Solution:**
 ```bash
+npm install @playwright/test
 npx playwright install
 ```
 
-### Clear Cache and Reinstall
+---
+
+## Dependencies
+
+### Dev Dependencies
+
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `@playwright/test` | ^1.58.0 | E2E testing framework and runners |
+| `@types/node` | ^25.1.0 | TypeScript type definitions |
+
+### Installation Command
+
 ```bash
-rm -rf node_modules package-lock.json
-npm install
-npx playwright install
+npm install --save-dev @playwright/test@^1.58.0 @types/node@^25.1.0
 ```
 
-## CI/CD Configuration
+---
 
-The project is configured for CI/CD with:
-- Automatic retries (2 times on CI)
-- Single worker on CI for consistency
-- HTML reports generated automatically
-- Forbids `test.only` in source code
+## Best Practices
 
-## License
+✅ **Parallel Testing** - Tests run in parallel for faster feedback  
+✅ **Page Object Model** - Each test is independent and self-contained  
+✅ **Realistic Delays** - Typing with delays simulates user behavior  
+✅ **Explicit Waits** - Uses timeouts instead of hard sleeps  
+✅ **Cross-browser Testing** - Validates functionality across Chrome, Firefox, Safari  
+✅ **Test Organization** - Clear naming convention for easy identification  
 
-ISC
+---
 
-## Author
+## CI/CD Integration
 
-IT23847330
+To integrate with CI/CD pipelines:
 
-## Support
+1. **GitHub Actions Example:**
+```yaml
+name: Playwright Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - run: npx playwright install
+      - run: npx playwright test
+```
 
-For issues or questions about the tests, check:
-- Playwright documentation: https://playwright.dev
-- Swift Translator: https://www.swifttranslator.com/
-- Test report details in `playwright-report/` directory
+2. **Environment Variables:**
+```bash
+CI=true npx playwright test
+```
+
+---
+
+## Contributing
+
+When adding new test cases:
+
+1. Follow the naming convention: `Pos_UI_XXXX`
+2. Use consistent structure:
+   - Navigate to URL
+   - Input English transliteration
+   - Assert Sinhala translation appears
+3. Add meaningful comments
+4. Test with all browsers: `npx playwright test --headed`
+
+---
+
+## Resources & Documentation
+
+- **Playwright Docs:** https://playwright.dev/
+- **Test Configuration:** https://playwright.dev/docs/test-configuration
+- **Test Reporters:** https://playwright.dev/docs/test-reporters
+- **Debugging:** https://playwright.dev/docs/debug
+
+---
+
+## Project Information
+
+- **Author:** IT23847330
+- **License:** ISC
+- **Created:** 2026
+- **Status:** Active Testing
+
+---
+
+## Summary
+
+This test suite provides comprehensive validation of the Swift Translator application's real-time translation capabilities. With 35+ test cases covering various input types and scenarios, the suite ensures reliable English-to-Sinhala transliteration across multiple browsers and platforms.
+
+For questions or contributions, refer to the Playwright documentation and ensure all tests pass before deployment.
+
+---
+
+**Last Updated:** January 31, 2026
