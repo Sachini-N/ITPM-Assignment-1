@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 
-  test('Pos_UI_0001 - Real-time output update', async ({ page }) => {
+  test('Pos_Fun_0001 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -13,7 +13,7 @@ import { test, expect } from '@playwright/test';
     await expect(page.getByText('මම මිදුලේ ඉන්නේ.')).toBeVisible({ timeout: 10000 });
   });
 
-    test('Pos_UI_0002 - Real-time output update', async ({ page }) => {
+    test('Pos_Fun_0002 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -24,7 +24,7 @@ import { test, expect } from '@playwright/test';
     await expect(page.getByText('කරුණාකරලා මට පොඩි උදව්වක් කරන්න පුළුවන්ද?')).toBeVisible({ timeout: 10000 });
   });
 
-  test('Pos_UI_0003 - Real-time output update', async ({ page }) => {
+  test('Pos_Fun_0003 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -37,7 +37,7 @@ import { test, expect } from '@playwright/test';
 
   
 
-  test('Pos_UI_0004 - Real-time output update', async ({ page }) => {
+  test('Pos_Fun_0004 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -51,7 +51,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-  test('Pos_UI_0005 - Real-time output update', async ({ page }) => {
+  test('Pos_Fun_0005 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -64,7 +64,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-    test('Pos_UI_0006 - Real-time output update', async ({ page }) => {
+    test('Pos_Fun_0006 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -76,7 +76,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-     test('Pos_UI_0007 - Real-time output update', async ({ page }) => {
+     test('Pos_Fun_0007 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -88,7 +88,7 @@ import { test, expect } from '@playwright/test';
   });
   
 
-    test('Pos_UI_0008 - Real-time output update', async ({ page }) => {
+    test('Pos_Fun_0008 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -100,7 +100,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-   test('Pos_UI_0009 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0009 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -113,7 +113,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0010 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0010 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -127,7 +127,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0011 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0011 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -140,7 +140,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0012 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0012 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -152,7 +152,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-   test('Pos_UI_0013 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0013 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -164,7 +164,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-   test('Pos_UI_0014 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0014 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -177,7 +177,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0015 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0015 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -191,7 +191,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0016 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0016 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -204,7 +204,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0017 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0017 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -217,7 +217,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0018 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0018 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -230,7 +230,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0019 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0019 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -243,7 +243,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0020 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0020 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -256,7 +256,7 @@ import { test, expect } from '@playwright/test';
 
 
   
- test('Pos_UI_0021 - Real-time output update', async ({ page }) => {
+ test('Pos_Fun_0021 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -269,7 +269,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0022 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0022 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -282,7 +282,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0023 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0023 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -295,7 +295,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0024 - Real-time output update', async ({ page }) => {
+   test('Pos_Fun_0024 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -308,7 +308,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0025 - Real-time output update', async ({ page }) => {
+   test('Neg_Fun_0025 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -321,7 +321,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-   test('Pos_UI_0026 - Real-time output update', async ({ page }) => {
+   test('Neg_Fun_0026 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -335,7 +335,7 @@ import { test, expect } from '@playwright/test';
 
 
   
-   test('Pos_UI_0027 - Real-time output update', async ({ page }) => {
+   test('Neg_Fun_0027 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -347,7 +347,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-  test('Pos_UI_0028 - Real-time output update', async ({ page }) => {
+  test('Neg_Fun_0028 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -359,7 +359,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-   test('Pos_UI_0029 - Real-time output update', async ({ page }) => {
+   test('Neg_Fun_0029 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -370,7 +370,7 @@ import { test, expect } from '@playwright/test';
     await expect(page.getByText('ලමයි ඉස්කෝල් යනවා')).toBeVisible({ timeout: 10000 });
   });
 
-  test('Pos_UI_0030 - Real-time output update', async ({ page }) => {
+  test('Neg_Fun_0030 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -382,7 +382,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-  test('Pos_UI_0031 - Real-time output update', async ({ page }) => {
+  test('Neg_Fun_0031 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -394,7 +394,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-  test('Pos_UI_0032 - Real-time output update', async ({ page }) => {
+  test('Neg_Fun_0032 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -406,7 +406,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-  test('Pos_UI_0033 - Real-time output update', async ({ page }) => {
+  test('Neg_Fun_0033 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
@@ -418,7 +418,7 @@ import { test, expect } from '@playwright/test';
   });
 
 
-  test('Pos_UI_0034 - Real-time output update', async ({ page }) => {
+  test('Neg_Fun_0034 - Real-time output update', async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
 
     const inputBox = page.locator('textarea');
